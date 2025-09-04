@@ -1,0 +1,320 @@
+@import "tailwindcss";
+
+/* Poppins Font Configuration */
+:root {
+  --font-poppins: var(--font-poppins);
+  --font-poppins-mono: var(--font-poppins-mono);
+}
+
+/* Minimalistic Color Scheme - White Background with Blue Accents */
+:root {
+  /* Primary Colors - Clean Blues */
+  --background: #ffffff;
+  --foreground: #1a202c;
+  
+  --primary: #2563eb;           /* Blue-600 */
+  --primary-light: #3b82f6;     /* Blue-500 */
+  --primary-lighter: #60a5fa;   /* Blue-400 */
+  --primary-lightest: #93c5fd;  /* Blue-300 */
+  
+  --secondary: #1e40af;         /* Blue-700 */
+  --secondary-dark: #1e3a8a;    /* Blue-800 */
+  
+  /* Neutral Colors - Clean Grays */
+  --neutral-50: #f8fafc;
+  --neutral-100: #f1f5f9;
+  --neutral-200: #e2e8f0;
+  --neutral-300: #cbd5e1;
+  --neutral-400: #94a3b8;
+  --neutral-500: #64748b;
+  --neutral-600: #475569;
+  --neutral-700: #334155;
+  --neutral-800: #1e293b;
+  --neutral-900: #0f172a;
+  
+  /* Accent Colors */
+  --accent: #0ea5e9;            /* Sky-500 */
+  --accent-light: #38bdf8;      /* Sky-400 */
+  
+  /* Status Colors */
+  --success: #10b981;
+  --warning: #f59e0b;
+  --error: #ef4444;
+  
+  /* Shadows - Soft and Clean */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  
+  /* Gradients - Clean Blue Gradients */
+  --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+  --gradient-light: linear-gradient(135deg, var(--primary-light) 0%, var(--accent-light) 100%);
+  --gradient-subtle: linear-gradient(135deg, var(--primary-lightest) 0%, var(--accent-light) 100%);
+}
+
+/* Tailwind CSS Variables for shadcn/ui compatibility */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-poppins);
+  --font-mono: var(--font-poppins-mono);
+}
+
+/* Light theme (default) - Minimalistic */
+:root {
+  --background: 0 0% 100%;
+  --foreground: 215 20% 17%;
+  --card: 0 0% 100%;
+  --card-foreground: 215 20% 17%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 215 20% 17%;
+  --primary: 221 83% 53%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 215 27% 97%;
+  --secondary-foreground: 215 20% 17%;
+  --muted: 215 27% 97%;
+  --muted-foreground: 215 16% 47%;
+  --accent: 199 89% 48%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 215 27% 92%;
+  --input: 215 27% 92%;
+  --ring: 221 83% 53%;
+  --radius: 0.75rem;
+}
+
+/* Body Styling with Poppins */
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-poppins), 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Enhanced Animation Utilities */
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-fade-out {
+  animation: fadeOut 0.4s ease-in forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.6s ease-out forwards;
+}
+
+.animate-slide-down {
+  animation: slideDown 0.4s ease-in forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.4s ease-out forwards;
+}
+
+.animate-bounce-in {
+  animation: bounceIn 0.6s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Advanced Animation Keyframes */
+@keyframes fadeIn {
+  0% { 
+    opacity: 0; 
+    transform: translateY(10px);
+  }
+  100% { 
+    opacity: 1; 
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  0% { 
+    opacity: 1; 
+    transform: translateY(0);
+  }
+  100% { 
+    opacity: 0; 
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes slideUp {
+  0% { 
+    opacity: 0; 
+    transform: translateY(30px); 
+  }
+  100% { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+@keyframes slideDown {
+  0% { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+  100% { 
+    opacity: 0; 
+    transform: translateY(30px); 
+  }
+}
+
+@keyframes scaleIn {
+  0% { 
+    opacity: 0; 
+    transform: scale(0.95); 
+  }
+  100% { 
+    opacity: 1; 
+    transform: scale(1); 
+  }
+}
+
+@keyframes bounceIn {
+  0% { 
+    opacity: 0; 
+    transform: scale(0.3); 
+  }
+  50% { 
+    opacity: 1; 
+    transform: scale(1.05); 
+  }
+  70% { 
+    transform: scale(0.9); 
+  }
+  100% { 
+    opacity: 1; 
+    transform: scale(1); 
+  }
+}
+
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0px); 
+  }
+  50% { 
+    transform: translateY(-10px); 
+  }
+}
+
+/* Staggered Animation Delays */
+.animate-delay-100 { animation-delay: 100ms; }
+.animate-delay-200 { animation-delay: 200ms; }
+.animate-delay-300 { animation-delay: 300ms; }
+.animate-delay-500 { animation-delay: 500ms; }
+.animate-delay-700 { animation-delay: 700ms; }
+.animate-delay-1000 { animation-delay: 1000ms; }
+
+/* Text Animation Variants */
+.animate-text-fade-in {
+  animation: textFadeIn 0.8s ease-out forwards;
+}
+
+.animate-text-slide-up {
+  animation: textSlideUp 0.7s ease-out forwards;
+}
+
+@keyframes textFadeIn {
+  0% { 
+    opacity: 0; 
+    filter: blur(4px);
+    transform: translateY(15px);
+  }
+  100% { 
+    opacity: 1; 
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes textSlideUp {
+  0% { 
+    opacity: 0; 
+    transform: translateY(25px);
+  }
+  100% { 
+    opacity: 1; 
+    transform: translateY(0);
+  }
+}
+
+/* Minimalistic Utility Classes */
+.glass-subtle {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.shadow-soft {
+  box-shadow: var(--shadow-lg);
+}
+
+.shadow-minimal {
+  box-shadow: var(--shadow);
+}
+
+.gradient-primary {
+  background: var(--gradient-primary);
+}
+
+.gradient-light {
+  background: var(--gradient-light);
+}
+
+.gradient-subtle {
+  background: var(--gradient-subtle);
+}
+
+/* Focus States - Clean and Minimal */
+.focus-ring {
+  @apply focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2;
+}
+
+/* Hover Effects */
+.hover-lift {
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Typography Improvements with Poppins */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+.text-gradient {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Responsive Animation Control */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
