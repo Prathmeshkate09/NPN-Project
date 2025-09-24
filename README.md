@@ -5,7 +5,7 @@ This repository contains two parts:
 - Frontend (Next.js) in a separate folder `..\Fintrust-Frontend-main` (included alongside this repo)
 
 This README explains what each part does, how Docker is used, how the SQLite database works, and quick local and deployment instructions for Windows (PowerShell).
-Link - https://fintrust-frontend.vercel.app/
+Link - fintrust-frontend.vercel.app
 ---
 
 ## Project overview
